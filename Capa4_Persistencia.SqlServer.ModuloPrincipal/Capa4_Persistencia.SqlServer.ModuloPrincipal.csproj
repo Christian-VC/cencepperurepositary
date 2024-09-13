@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BA0C6523-1046-4BC7-9411-5A53AB136664}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Capa4_Persistencia.SqlServer.ModuloPrincipal</RootNamespace>
+    <AssemblyName>Capa4_Persistencia.SqlServer.ModuloPrincipal</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlumnoSQL.cs" />
+    <Compile Include="AreaSQL.cs" />
+    <Compile Include="DetalleCursoSQL.cs" />
+    <Compile Include="DetallePedidoSQL.cs" />
+    <Compile Include="GrupoSQL.cs" />
+    <Compile Include="ModuloSQL.cs" />
+    <Compile Include="PedidoSQL.cs" />
+    <Compile Include="ProgramaSQL.cs" />
+    <Compile Include="PromotorSQL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capa3_Dominio.ModuloPrincipal\Capa3_Dominio.ModuloPrincipal.csproj">
+      <Project>{62A43F96-B07E-4CF7-952D-78277CD01225}</Project>
+      <Name>Capa3_Dominio.ModuloPrincipal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Capa4_Persistencia.SqlServer.ModuloBase\Capa4_Persistencia.SqlServer.ModuloBase.csproj">
+      <Project>{07EC2074-1EB2-4DB6-BD03-1E97CD1A6C31}</Project>
+      <Name>Capa4_Persistencia.SqlServer.ModuloBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
