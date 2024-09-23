@@ -44,5 +44,19 @@
     <Compile Include="GestionAreaServicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capa3_Dominio.ModuloPrincipal\Capa3_Dominio.ModuloPrincipal.csproj">
+      <Project>{62A43F96-B07E-4CF7-952D-78277CD01225}</Project>
+      <Name>Capa3_Dominio.ModuloPrincipal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Capa4_Persistencia.SqlServer.ModuloBase\Capa4_Persistencia.SqlServer.ModuloBase.csproj">
+      <Project>{07EC2074-1EB2-4DB6-BD03-1E97CD1A6C31}</Project>
+      <Name>Capa4_Persistencia.SqlServer.ModuloBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Capa4_Persistencia.SqlServer.ModuloPrincipal\Capa4_Persistencia.SqlServer.ModuloPrincipal.csproj">
+      <Project>{BA0C6523-1046-4BC7-9411-5A53AB136664}</Project>
+      <Name>Capa4_Persistencia.SqlServer.ModuloPrincipal</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,33 +1,33 @@
-﻿using Capa4_Persistencia.SqlServer.ModuloBase;
+﻿using Capa3_Dominio.ModuloPrincipal.Entidad;
+using Capa4_Persistencia.SqlServer.ModuloBase;
 using Capa4_Persistencia.SqlServer.ModuloPrincipal;
-using Capa3_Dominio.ModuloPrincipal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Capa3_Dominio.ModuloPrincipal.Entidad;
 
 namespace Capa2_Aplicacion.Servicio
 {
-    public class GestionAreaServicio
+    public class GestionGrupoServicio
     {
         private ConectionSqlServer conectionSqlServer;
-        private AreaSQL areaSQL;
-        public GestionAreaServicio() {
+        private GrupoSQL grupoSQL;
+        public GestionGrupoServicio()
+        {
             conectionSqlServer = new ConectionSqlServer();
-            areaSQL = new AreaSQL(conectionSqlServer);
+            grupoSQL = new GrupoSQL(conectionSqlServer);
         }
 
-        public List<Area> ListarArea()
+        public List<Grupo> ListarGrupo()
         {
-            List<Area> listaArea;
+            List<Grupo> listaGrupo;
             try
             {
                 conectionSqlServer.StartTransaction();
-                listaArea = areaSQL.Listar();
+                listaGrupo = grupoSQL.Listar();
                 conectionSqlServer.FinishTransaction();
-                return listaArea;
+                return listaGrupo;
             }
             catch (Exception error)
             {
@@ -35,15 +35,15 @@ namespace Capa2_Aplicacion.Servicio
             }
         }
 
-        public Area BuscarArea(String codigo)
+        public Grupo BuscarGrupo(String codigo)
         {
-            Area area;
+            Grupo grupo;
             try
             {
                 conectionSqlServer.StartTransaction();
-                area = areaSQL.Buscar(codigo);
+                grupo = grupoSQL.Buscar(codigo);
                 conectionSqlServer.FinishTransaction();
-                return area;
+                return grupo;
             }
             catch (Exception error)
             {
@@ -51,12 +51,12 @@ namespace Capa2_Aplicacion.Servicio
             }
         }
 
-        public void RegistrarArea(Area area)
+        public void RegistrarGrupo(Grupo grupo)
         {
             try
             {
                 conectionSqlServer.StartTransaction();
-                areaSQL.Registrar(area);
+                grupoSQL.Registrar(grupo);
                 conectionSqlServer.CloseConnection();
             }
             catch (Exception error)
@@ -65,12 +65,12 @@ namespace Capa2_Aplicacion.Servicio
             }
         }
 
-        public void ActualizarArea(Area area)
+        public void ActualizarGrupo(Grupo grupo)
         {
             try
             {
                 conectionSqlServer.StartTransaction();
-                areaSQL.Actualizar(area);
+                grupoSQL.Actualizar(grupo);
                 conectionSqlServer.FinishTransaction();
             }
             catch (Exception error)
@@ -79,12 +79,12 @@ namespace Capa2_Aplicacion.Servicio
             }
         }
 
-        public void CambiarEstadoArea(Area area)
+        public void CambiarEstadoGrupo(Grupo grupo)
         {
             try
             {
                 conectionSqlServer.StartTransaction();
-                areaSQL.CambioEstado(area);
+                grupoSQL.CambioEstado(grupo);
                 conectionSqlServer.FinishTransaction();
             }
             catch (Exception error)
